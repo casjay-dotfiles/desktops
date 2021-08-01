@@ -6,8 +6,8 @@
 sudo: enabled
 
 install:
-  - bash -c "$(curl -LSs https://github.com/casjay-dotfiles/scripts/raw/master/install.sh)"
-  - sudo bash -c "$(curl -LSs https://github.com/casjay-dotfiles/scripts/raw/master/install.sh)"
+  - bash -c "$(curl -LSs https://github.com/casjay-dotfiles/scripts/raw/main/install.sh)"
+  - sudo bash -c "$(curl -LSs https://github.com/casjay-dotfiles/scripts/raw/main/install.sh)"
   - pkmgr makecache
   - pkmgr update
   - ./install.sh

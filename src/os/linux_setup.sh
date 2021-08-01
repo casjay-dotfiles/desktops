@@ -145,7 +145,7 @@ JGMENU=$(which jgmenu 2>/dev/null)
 SUDU=$(which sudo 2>/dev/null)
 if ! (sudo -vn && sudo -ln) 2>&1 | grep -v 'may not' > /dev/null; then
  if [[ -z "$SUDU" ]] && [[ -z "$UPDATE" ]]; then
-   printf "\n${GREEN} *** ${RED}•${GREEN} UPDATE=yes bash -c "$(curl -LsS https://$GITREPO/raw/master/src/os/setup.sh)" ${RED}•${GREEN} ***${NC}\n"
+   printf "\n${GREEN} *** ${RED}•${GREEN} UPDATE=yes bash -c "$(curl -LsS https://$GITREPO/raw/main/src/os/setup.sh)" ${RED}•${GREEN} ***${NC}\n"
    printf "\n${GREEN}  *** ${RED}•${GREEN} to install just the dotfiles ${RED}•${GREEN} ***${NC}\n"
    printf "\n${RED}  *** ${RED}•${GREEN} No sudo or root privileges ${RED}•${GREEN} ***${NC}\n\n"
   exit
@@ -198,7 +198,7 @@ fi
 if [ -f $srcdir/os/osdetect.sh ]; then
     source $srcdir/os/osdetect.sh
 else
-    curl -Lsq https://$GITREPO/raw/master/src/os/osdetect.sh -o /tmp/osdetect.sh
+    curl -Lsq https://$GITREPO/raw/main/src/os/osdetect.sh -o /tmp/osdetect.sh
     source /tmp/osdetect.sh
     rm -Rf /tmp/osdetect.sh
 fi
@@ -206,7 +206,7 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Set version from git
 
-CURDOTFVERSION="$(echo $(curl -Lsq https://$GITREPO/raw/master/src/os/version.txt |grep -v "#" | tail -n 1))"
+CURDOTFVERSION="$(echo $(curl -Lsq https://$GITREPO/raw/main/src/os/version.txt |grep -v "#" | tail -n 1))"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Print distro info

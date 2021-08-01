@@ -20,7 +20,7 @@ else
 fi
 if [ -f $dotfilesdir/src/os/version.txt ]; then
     printf "\t$magenta" "Checking for updates"
-    NEWVERSION="$(echo $(curl -Lsq https://github.com/casjay/dotfiles/raw/master/src/os/version.txt |grep -v "#" | tail -n 1))"
+    NEWVERSION="$(echo $(curl -Lsq https://github.com/casjay/dotfiles/raw/main/src/os/version.txt |grep -v "#" | tail -n 1))"
     OLDVERSION="$(echo $(cat $dotfilesdir/src/os/version.txt | tail -n 1))"
  if [ "$NEWVERSION" == "$OLDVERSION" ]; then
         printf "\t\t$green No updates available current version is $OLDVERSION\n"
